@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Shopping List Composable</string>
+    <string name="shoppinglist">Shopping List</string>
+</resources>
