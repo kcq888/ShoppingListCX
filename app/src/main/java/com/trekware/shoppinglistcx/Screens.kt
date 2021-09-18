@@ -17,21 +17,25 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
 
-sealed class Screens(val route: String, val title: String) {
+sealed class Screens(val route: String, val title: String, val category: Category) {
+
+    enum class Category { GROCERY, HOMEIMPROVEMENT, ADDLIST }
 
     sealed class HomeScreen(
         route: String,
-        title: String
-    ) : Screens(route, title) {
-        object AddList : HomeScreen("addlist", "Add List")
+        title: String,
+        category : Category
+    ) : Screens(route, title, category) {
+        object AddList : HomeScreen("addlist", "Add List", Category.ADDLIST)
     }
 
     sealed class DrawerScreens(
         route: String,
-        title: String
-    ) : Screens(route, title) {
-        object Grocery : DrawerScreens("grocery", "Grocery")
-        object HomeImprovement : DrawerScreens("homeimprovement", "Home Improvement")
+        title: String,
+        category: Category
+    ) : Screens(route, title, category) {
+        object Grocery : DrawerScreens("grocery", "Grocery", Category.GROCERY)
+        object HomeImprovement : DrawerScreens("homeimprovement", "Home Improvement", Category.HOMEIMPROVEMENT)
     }
 }
 

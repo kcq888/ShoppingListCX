@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">Shopping List Composable</string>
     <string name="shoppinglist">Shopping List</string>
+    <string name="addlist">Add List</string>
+    <string name="grocery">Grocery</string>
+    <string name="homeimprovement">Home Improvement</string>
+    <string name="additemtolist">Add an item to the list</string>
 </resources>
