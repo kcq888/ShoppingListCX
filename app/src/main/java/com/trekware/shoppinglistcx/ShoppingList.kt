@@ -16,18 +16,20 @@ import androidx.compose.ui.unit.dp
 import com.trekware.shoppinglistcx.data.ShoppingListItem
 
 @Composable
-fun ShoppingList(shoppingList: List<ShoppingListItem>) {
+fun ShoppingList(shoppingList: List<ShoppingListItem>, viewModel: MainViewModel) {
     LazyColumn (
         Modifier.fillMaxSize()
     ) {
         items(shoppingList) {
-            ItemRow(item = it)
+            ItemRow(item = it, onCheckBoxClicked = {
+                viewModel.updateItem(it)
+            })
         }
     }
 }
 
 @Composable
-fun ItemRow(item: ShoppingListItem) {
+fun ItemRow(item: ShoppingListItem, onCheckBoxClicked: (ShoppingListItem) -> Unit) {
     Row(
         modifier = Modifier
             .fillMaxWidth()
@@ -36,7 +38,12 @@ fun ItemRow(item: ShoppingListItem) {
        val checkState = remember{ mutableStateOf(item.isItemFill)}
         Checkbox(
             checked = checkState.value,
-            onCheckedChange = { checkState.value = it})
+            onCheckedChange = {
+                checkState.value = it
+                item.isItemFill = it
+                onCheckBoxClicked(item)
+            }
+        )
         Spacer(modifier = Modifier.width(10.dp))
         Column (
             Modifier.width(200.dp)

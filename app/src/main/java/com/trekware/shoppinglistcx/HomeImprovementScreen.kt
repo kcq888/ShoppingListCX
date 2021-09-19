@@ -22,6 +22,6 @@ fun HomeImprovementScreen(modifier: Modifier = Modifier, viewModel: MainViewMode
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ShoppingList(items)
+        ShoppingList(items, viewModel)
     }
 }

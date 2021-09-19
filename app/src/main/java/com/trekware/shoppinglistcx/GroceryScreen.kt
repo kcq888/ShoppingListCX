@@ -22,6 +22,6 @@ fun GroceryScreen(modifier: Modifier = Modifier, viewModel: MainViewModel) {
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        ShoppingList(items)
+        ShoppingList(items, viewModel)
     }
 }

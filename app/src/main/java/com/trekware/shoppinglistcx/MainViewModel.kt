@@ -52,6 +52,12 @@ class MainViewModel(context: Context) : ViewModel() {
         }
     }
 
+    fun updateItem(shoppingListItem: ShoppingListItem) {
+        viewModelScope.launch {
+            dataSource.update(shoppingListItem)
+        }
+    }
+
     fun delAll() {
         viewModelScope.launch {
             dataSource.clear()
