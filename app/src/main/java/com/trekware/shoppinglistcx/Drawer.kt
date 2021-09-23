@@ -29,7 +29,7 @@ fun Drawer(
            verticalAlignment = Alignment.CenterVertically
        ) {
            Image(
-            painter = painterResource(R.drawable.ic__check_document_done_list_paper),
+            painter = painterResource(R.drawable.ic_check_document_done_list_paper),
             contentDescription = "App icon")
             Text(stringResource(id = R.string.shoppinglist), fontSize = 28.sp)
        }

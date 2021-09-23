@@ -28,6 +28,12 @@ fun ShoppingList(shoppingList: List<ShoppingListItem>, viewModel: MainViewModel)
     }
 }
 
+/*
+ * ItemRow render each row in the LazyColumn and return the kotlin type. The kotlin type is a
+ * lambda function with a return type. The Unit return type here in the onCheckBoxClicked is equivalent
+ * as the Java void type. see
+ * https://kotlinlang.org/docs/lambdas.html#function-types
+ */
 @Composable
 fun ItemRow(item: ShoppingListItem, onCheckBoxClicked: (ShoppingListItem) -> Unit) {
     Row(

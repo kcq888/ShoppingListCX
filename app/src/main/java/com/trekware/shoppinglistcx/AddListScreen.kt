@@ -1,7 +1,6 @@
 package com.trekware.shoppinglistcx
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.*
 import androidx.compose.runtime.Composable
@@ -33,7 +32,7 @@ fun AddListScreen(modifier: Modifier = Modifier, viewModel: MainViewModel, navCo
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                painter = painterResource(R.drawable.ic__check_document_done_list_paper),
+                painter = painterResource(R.drawable.ic_check_document_done_list_paper),
                 contentDescription = "App icon"
             )
             Text(stringResource(id = R.string.additemtolist), fontSize = 24.sp)

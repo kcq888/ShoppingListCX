@@ -30,17 +30,17 @@ class MainActivity : ComponentActivity() {
         super.onCreate(savedInstanceState)
         setContent {
             ShoppingListCXTheme {
-                    AppScaffold()
+                    AppShoppingList()
                 }
             }
     }
 }
 
 /*
- * AppScaffold is the main App main landing screen with navigation drawer, action and fab buttons
+ * AppShoppingList is the main App main landing screen with navigation drawer, action and fab buttons
  */
 @Composable
-fun AppScaffold() {
+fun AppShoppingList() {
     val viewModel: MainViewModel = MainViewModel(LocalContext.current)
     val scaffoldState = rememberScaffoldState(rememberDrawerState(DrawerValue.Closed))
     val scope = rememberCoroutineScope()
@@ -92,7 +92,6 @@ fun AppScaffold() {
                     scaffoldState.drawerState.close()
                 }
                 navController.navigate(route) {
-                    //popUpToId = navController.graph.startDestinationId
                     launchSingleTop = true
                 }
             }
@@ -123,6 +122,6 @@ fun NavigationHost(navController: NavController, viewModel: MainViewModel) {
 @Composable
 fun DefaultPreview() {
     ShoppingListCXTheme {
-        AppScaffold()
+        AppShoppingList()
     }
 }
